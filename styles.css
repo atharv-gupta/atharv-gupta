@@ -1,0 +1,580 @@
+/* Shared Styles - Earthy, Sophisticated Design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-cream: #faf8f4;
+    --color-warm-beige: #f0ebe2;
+    --color-olive: #7a8a5a;
+    --color-dark-olive: #6a7850;
+    --color-warm-brown: #9d8a6f;
+    --color-dark-brown: #6b5d47;
+    --color-charcoal: #3a3a3a;
+    --color-text: #3a3a3a;
+    --color-text-light: #6b6b6b;
+    --color-accent: #9d8a6f;
+    --color-border: rgba(122, 138, 90, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Georgia', serif;
+    line-height: 1.75;
+    color: var(--color-text);
+    background: var(--color-cream);
+    min-height: 100vh;
+    font-weight: 400;
+}
+
+/* Navigation Header */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(245, 241, 232, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-dark-olive);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--color-olive);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-olive);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-olive);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+}
+
+/* Name Header - Large at top */
+.name-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+.name-header h1 {
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--color-dark-brown);
+    margin-bottom: 0;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
+}
+
+/* Home Navigation - Below name */
+.home-nav {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.home-nav .nav-links {
+    justify-content: center;
+    gap: 50px;
+}
+
+.home-nav .nav-links a {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-text-light);
+    letter-spacing: 0.5px;
+}
+
+/* Typography */
+h1 {
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--color-dark-brown);
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--color-dark-olive);
+    margin-bottom: 30px;
+    letter-spacing: -0.3px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--color-olive);
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-dark-brown);
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 24px;
+    color: var(--color-text);
+    font-size: 18px;
+    line-height: 1.85;
+    font-weight: 400;
+}
+
+a {
+    color: var(--color-olive);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--color-dark-olive);
+    border-bottom-color: var(--color-olive);
+}
+
+/* Photo and Bio Side by Side */
+.bio-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.photo-wrapper {
+    position: sticky;
+    top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    object-fit: cover;
+}
+
+.profile-photo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.bio-text {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bio-text p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 24px;
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+.bio-text strong {
+    font-weight: 600;
+    color: var(--color-dark-brown);
+}
+
+/* Academic Summary */
+.academic-summary {
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.academic-summary h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.academic-summary p {
+    font-size: 15px;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Experience Section Headers */
+.experience-section {
+    margin-bottom: 25px;
+}
+
+.experience-section h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--color-dark-olive);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Experience Items with Dropdown */
+.experience-item {
+    margin-bottom: 8px;
+    border: none;
+    background: transparent;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.experience-header {
+    padding: 8px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.experience-header:hover {
+    border-bottom-color: var(--color-border);
+}
+
+.experience-header-content {
+    flex: 1;
+}
+
+.experience-header h3 {
+    color: var(--color-dark-olive);
+    margin-bottom: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.experience-meta {
+    font-size: 12px;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+.experience-toggle {
+    font-size: 12px;
+    color: var(--color-olive);
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+    font-weight: 300;
+    flex-shrink: 0;
+}
+
+.experience-item.active .experience-toggle {
+    transform: rotate(180deg);
+}
+
+.experience-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0;
+}
+
+.experience-item.active .experience-details {
+    max-height: 1000px;
+    padding: 8px 0 0;
+}
+
+.experience-details p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.experience-details ul {
+    margin: 6px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.experience-details li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text);
+    padding-left: 14px;
+    position: relative;
+}
+
+.experience-details li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-olive);
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Writing Portfolio */
+.writing-item {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.writing-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.writing-item h3 {
+    margin-bottom: 10px;
+}
+
+.writing-item .meta {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+}
+
+/* Contact Form */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.contact-links a:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--color-olive);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.email-form {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-dark-olive);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-olive);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px rgba(107, 125, 71, 0.1);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: var(--color-olive);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background: var(--color-dark-olive);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 125, 71, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-container {
+        padding: 40px 20px 60px;
+    }
+    
+    .name-header h1 {
+        font-size: 48px;
+    }
+    
+    .home-nav .nav-links {
+        gap: 30px;
+    }
+    
+    .bio-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .photo-wrapper {
+        position: static;
+    }
+    
+    .profile-photo {
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+    }
+    
+    .contact-links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
